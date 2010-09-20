@@ -7,8 +7,7 @@ namespace :morph do
     begin
       Dir.mkdir directory
       puts "Directory RAILS_ROOT/#{directory} was successfully created."
-    rescue e
-      puts e
+    rescue
       puts "Directory RAILS_ROOT/#{directory} already exists. Aborting."
     end
   end
