@@ -6,9 +6,10 @@ namespace :morph do
     directory = "../../shared/mounted_storage/" + ENV['dir']
     begin
       Dir.mkdir directory
-      puts "Directory #{directory} was successfully created."
-    rescue
-      puts "Directory #{directory} already exists. Aborting."
+      puts "Directory RAILS_ROOT/#{directory} was successfully created."
+    rescue e
+      puts e
+      puts "Directory RAILS_ROOT/#{directory} already exists. Aborting."
     end
   end
 
