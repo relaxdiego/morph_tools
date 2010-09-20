@@ -1,8 +1,8 @@
 namespace :morph do
 
-  desc 'Initialize a directory in the mounted storage'
-  task :init_mounted_storage => :environment do
-    raise "You must supply the directory name with dir=<name>" if ENV['dir'].nil?
+  desc "Create a shared directory if it doesn't already exist"
+  task :create_shared_dir => :environment do
+    raise "You must supply the directory name with dir=<name>" if ENV['dir'].nil? or ENV['dir'].empty?
     directory = "../../shared/mounted_storage/" + ENV['dir']
     begin
       Dir.mkdir directory
